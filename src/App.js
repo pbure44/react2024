@@ -1,4 +1,5 @@
-import {Character} from './components/Character'
+import {Character} from "./components/Character";
+
 const App = () => {
     const characters=[
         {
@@ -16,7 +17,6 @@ const App = () => {
             name:'Джері Сміт',
             img:'https://cdn.meta.ua/meta_news/ca/01000mwn-ca2a_1280x720.png'
         }
-
     ]
     return (
         <div>
