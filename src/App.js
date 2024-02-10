@@ -1,23 +1,33 @@
 import {Character} from "./components/Character";
 
 const App = () => {
-    const characters=[
-        {
-            id:1,
-            name:'Рік Санчес',
-            img:'https://www.giantbomb.com/a/uploads/scale_small/46/462814/3182807-4063063699-latest'
-        },
-        {
-            id:2,
-            name: 'Морті Сміт',
-            img: 'https://upload.wikimedia.org/wikipedia/ru/thumb/c/c3/Morty_Smith.png/129px-Morty_Smith.png'
-        },
-        {
-            id:3,
-            name:'Джері Сміт',
-            img:'https://cdn.meta.ua/meta_news/ca/01000mwn-ca2a_1280x720.png'
-        }
-    ]
+   const characters=[
+       {
+           id:1,
+           name:'Homer Simpson',
+           img:'https://upload.wikimedia.org/wikipedia/en/0/02/Homer_Simpson_2006.png'
+       },
+       {
+           id:2,
+           name:'Marge Simpson',
+           img:'https://upload.wikimedia.org/wikipedia/en/0/0b/Marge_Simpson.png'
+       },
+       {
+           id:3,
+           name:'Bart Simpson',
+           img:'https://upload.wikimedia.org/wikipedia/en/thumb/a/aa/Bart_Simpson_200px.png/170px-Bart_Simpson_200px.png'
+       },
+       {
+           id:4,
+           name:'Lisa Simpson',
+           img:'https://upload.wikimedia.org/wikipedia/en/thumb/e/ec/Lisa_Simpson.png/220px-Lisa_Simpson.png'
+       },
+       {
+           id:5,
+           name:'Maggie Simpson',
+           img:'https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/Maggie_Simpson.png/220px-Maggie_Simpson.png'
+       }
+   ]
     return (
         <div>
             {characters.map(character=><Character character={character} key={character.id}/>)}
