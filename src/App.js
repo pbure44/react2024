@@ -1,11 +1,12 @@
-import {Users} from "./UserContainer/Users/users";
-import {useState} from "react";
+
+import {Posts} from "./PostContainer/Posts/posts";
 
 
 const App = () => {
     return (
-        <Users/>
-
+        <div>
+            <Posts/>
+        </div>
     );
 };
 
