@@ -10,6 +10,7 @@ const CarsContainer = () => {
     const [carForUpdate, setCarForUpdate] = useState(null);
 
     useEffect(() => {
+        console.log('UseEffect test')
         carService.getAll().then(({data})=> setCars(data))
     }, [trigger]);
     
