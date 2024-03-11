@@ -4,17 +4,16 @@ import {useSelector} from "react-redux";
 
 const App = () => {
     const {count} = useSelector(state => state.counter1)
-    const {count: count2} = useSelector(state => state.counter2)
-    console.log('Log App: ', count)
+    const {count:count2} = useSelector(state => state.counter2)
     return (
         <div>
             <div>
-            count: {count}
-            <ComponentOne/>
+                count:{count}
+                <ComponentOne/>
             </div>
             <div>
-            count2: {count2}
-            <ComponentTwo/>
+                count:{count2}
+                <ComponentTwo/>
             </div>
         </div>
     );
