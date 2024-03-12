@@ -8,4 +8,6 @@ const store = configureStore({
         counter2:counter2Reducer
     }
 })
-export {store}
+export {
+    store
+}
