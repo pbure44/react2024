@@ -4,6 +4,7 @@ const CharactersPage = () => {
     return (
         <div>
             <Characters/>
+            <hr/>
             <CharacterPagination/>
         </div>
     );
