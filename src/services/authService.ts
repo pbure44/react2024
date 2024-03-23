@@ -31,3 +31,7 @@ const authService = {
         localStorage.removeItem(refreshTokenKey)
     }
 }
+
+export {
+    authService
+}
