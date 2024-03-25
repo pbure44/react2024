@@ -5,28 +5,35 @@ import {apiService} from "./apiService";
 import {urls} from "../constants";
 
 const accessTokenKey = 'access';
-const refreshTokenKey= 'refresh';
+const refreshTokenKey = 'refresh';
 
 const authService = {
-    register(user:IAuth):IRes<IUser>{
+    register(user: IAuth): IRes<IUser> {
         return apiService.post(urls.auth.register, user)
     },
 
-    me():IRes<IUser>{
+    async login(user: IAuth): Promise<IUser> {
+        const {data} = await apiService.post(urls.auth.login, user);
+        this.setTokens(data)
+        const {data: me} = await this.me();
+        return me
+    },
+
+    me(): IRes<IUser> {
         return apiService.get(urls.auth.me)
     },
 
-    setTokens({access,refresh}:ITokens):void{
-        localStorage.setItem(accessTokenKey,access)
-        localStorage.setItem(refreshTokenKey,refresh)
+    setTokens({access, refresh}: ITokens): void {
+        localStorage.setItem(accessTokenKey, access)
+        localStorage.setItem(refreshTokenKey, refresh)
     },
-    getAccessToken():string{
+    getAccessToken(): string {
         return localStorage.getItem(accessTokenKey) //IDEA marks code that it can receive 'null', we turn off null-checking function (in tsconfig.json)
     },
-    getRefreshToken():string{
+    getRefreshToken(): string {
         return localStorage.getItem(refreshTokenKey)
     },
-    deleteTokens():void{
+    deleteTokens(): void {
         localStorage.removeItem(accessTokenKey)
         localStorage.removeItem(refreshTokenKey)
     }
